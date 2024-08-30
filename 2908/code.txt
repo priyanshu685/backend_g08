@@ -1,0 +1,29 @@
+TASK 1 - Find students whose age is =20 && marks=85
+
+db.student.find(
+    { age: { $gt: 20 }, marks: { $gt: 85 } }
+)
+
+TASK 2 - Find students whose age is <=20 && marks<=90
+
+db.student.find(
+    { marks: { $gte: 90 }, age: { $gte: 20 } }
+)
+
+TASK 3 - Find students whose marks<=81 , give them "A++" GRADE
+
+db.student.find(
+    { grade: "A++" }
+)
+
+And Command.
+
+db.student.find({$and:[ {age:{$gt:22}}, {marks:{$gte:85}}]})
+
+Count Command.
+
+db.student.countDocuments()
+
+Estimated Count
+
+db.collection.estimatedDocumentCount()
