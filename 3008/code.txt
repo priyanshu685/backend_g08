@@ -1,0 +1,108 @@
+Task :-> 1 UPDATE
+1. db.col_name.updateOne()
+
+db.col_name.updateOne(
+   { filterField: "value" },
+   { $set: { fieldToUpdate: "newValue" } } 
+)
+
+
+2. db.col_name.updateMany()
+
+db.col_name.updateMany(
+   { filterField: "value" },
+   { $set: { fieldToUpdate: "newValue" } } 
+)
+
+
+3. db.col_name.findOneAndUpdate()
+
+db.col_name.findOneAndUpdate(
+   { filterField: "value" }, 
+   { $set: { fieldToUpdate: "newValue" } }, 
+   { returnOriginal: false } 
+)
+
+
+4. db.col_name.name.replaceOne()
+
+db.col_name.replaceOne(
+   { filterField: "value" }, 
+   { field1: "newValue1", field2: "newValue2" }
+)
+
+Task :-> 2 Create
+1. db.col_name.insertOne()
+
+db.col_name.insertOne(
+   {
+      field1: "value1",
+      field2: "value2",
+      field3: "value3"
+   }
+)
+
+2. db.col_name.insertMany()
+
+db.col_name.insertMany([
+   {
+      field1: "value1",
+      field2: "value2",
+      field3: "value3"
+   },
+   {
+      field1: "value4",
+      field2: "value5",
+      field3: "value6"
+   }
+   // Additional documents can be added here
+])
+
+3. db.col_name.findOneAndReplace()
+
+db.col_name.findOneAndReplace(
+   { filterField: "value" }, // Filter to select the document to replace
+   {
+      field1: "newValue1",
+      field2: "newValue2",
+      field3: "newValue3"
+   },
+   { upsert: true } // Option to insert if no document matches
+)
+
+
+4. db.col_name.save()
+
+db.col_name.save(
+   {
+      _id: ObjectId("existingObjectId"), // If the _id matches, it updates the document
+      field1: "newValue1",
+      field2: "newValue2",
+      field3: "newValue3"
+   }
+)
+
+
+
+Task :-> 3 Delete
+1. db.col_name.DeleteOne()
+
+db.col_name.deleteOne(
+   { filterField: "value" } // Filter to select the document to delete
+)
+
+
+
+2. db.col_name.DeleteMany()
+
+db.col_name.deleteMany(
+   { filterField: "value" } // Filter to select documents to delete
+)
+
+
+
+3. db.col_name.findOneAndDelete()
+
+db.col_name.findOneAndDelete(
+   { filterField: "value" } // Filter to select the document to delete
+)
